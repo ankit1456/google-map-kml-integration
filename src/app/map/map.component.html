@@ -1,1 +1,12 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <div class="form-group">
+    <label for="url">Enter kml url here</label>
+    <input name="url" id="url" required #url="ngModel" ngModel type="text" />
+    <div *ngIf="url.touched && !url.valid" class="error">
+      <div *ngIf="url.errors?.['required']">URL is required</div>
+    </div>
+  </div>
+  <button class="btn" [disabled]="form.invalid">Submit</button>
+</form>
+
 <div class="map" #mapElement></div>

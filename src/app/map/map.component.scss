@@ -2,3 +2,59 @@
   width: 100vw;
   height: 100vh;
 }
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  min-width: 300px;
+  width: 35vw;
+  border-radius: 10px;
+  border: 2px solid rgb(238, 200, 96);
+  outline: none;
+  margin-left: 20px;
+  &:focus {
+    border: 2px solid green;
+  }
+}
+.form-group {
+  position: relative;
+}
+
+.btn {
+  border: none;
+  padding: 10px 30px;
+  font-size: 18px;
+  background-image: linear-gradient(
+    to right,
+    rgba(15, 71, 212, 0.6),
+    rgba(3, 33, 76, 0.8)
+  );
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  align-self: start;
+
+  &:disabled {
+    background-image: linear-gradient(
+      to right,
+      rgba(89, 128, 226, 0.6),
+      rgba(38, 71, 117, 0.8)
+    );
+    cursor: not-allowed;
+  }
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-gap: 20px;
+  padding: 20px;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  position: absolute;
+  bottom: -15px;
+  left: 25%;
+  margin-top: 5px;
+}
