@@ -11,14 +11,14 @@ export class MapComponent implements OnInit, AfterViewInit {
   url: string = '';
   map: any;
   @ViewChild('mapElement') mapElement: any;
+
   constructor() {}
 
   submit(f: NgForm) {
     this.url = f.controls['url'].value;
-
-    
     this.ngAfterViewInit();
-    this.url=""
+    f.reset();
+   
   }
 
   ngAfterViewInit(): void {
