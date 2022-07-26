@@ -26,6 +26,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       center: new google.maps.LatLng(35.2271, -80.8431),
       zoom: 5,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      suppressInfoWindows: true,
     };
     this.map = new google.maps.Map(
       this.mapElement.nativeElement,
@@ -36,6 +37,8 @@ export class MapComponent implements OnInit, AfterViewInit {
       url: this.url,
       // url: 'https://googlearchive.github.io/js-v2-samples/ggeoxml/cta.kml',
       // url: 'https://heremaps.github.io/maps-api-for-javascript-examples/display-kml-on-map/data/us-states.kml',
+      //url:"https://raw.githubusercontent.com/googlearchive/kml-samples/gh-pages/kml/Placemark/placemark.kml",
+      // url:"http://api.flickr.com/services/feeds/geo/?g=322338@N20&lang=en-us&format=feed-georss"
       map: this.map,
     });
 
