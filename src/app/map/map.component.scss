@@ -1,6 +1,7 @@
-.map {
-  width: 100vw;
-  height: 100vh;
+.map{
+  width: 100%;
+  height:calc(100vh - 7.5vw);
+  background-color: maroon;
 }
 
 input {
@@ -10,6 +11,7 @@ input {
   width: 35vw;
   border-radius: 10px;
   border: 2px solid rgb(238, 200, 96);
+
   outline: none;
   margin-left: 20px;
   &:focus {
@@ -45,10 +47,10 @@ input {
 }
 
 form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, max-content));
-  grid-gap: 20px;
+ display: flex;
+ justify-content: center;
   padding: 20px;
+  gap:20px;
 }
 .error {
   color: red;
