@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Address } from 'ngx-google-places-autocomplete/objects/address';
 declare const google: any;
 
 @Component({
@@ -10,6 +11,7 @@ declare const google: any;
 export class MapComponent implements OnInit, AfterViewInit {
   url: string = '';
   map: any;
+  address:Address
   @ViewChild('mapElement') mapElement: any;
 
   constructor() {}
@@ -20,7 +22,9 @@ export class MapComponent implements OnInit, AfterViewInit {
     f.reset();
    
   }
-
+  handleAddressChange(address:Address){
+    this.address=address
+  }
   ngAfterViewInit(): void {
     const mapProperties = {
       center: new google.maps.LatLng(35.2271, -80.8431),
@@ -32,7 +36,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       this.mapElement.nativeElement,
       mapProperties
     );
-
+ 
     const ctaLayer = new google.maps.KmlLayer({
       url: this.url,
       // url: 'https://googlearchive.github.io/js-v2-samples/ggeoxml/cta.kml',

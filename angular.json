@@ -34,7 +34,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/vendors/google.js"
+              "src/assets/vendors/google-map.js"
             ]
           },
           "configurations": {

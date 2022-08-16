@@ -5,8 +5,15 @@
     <div *ngIf="url.touched && !url.valid" class="error">
       <div *ngIf="url.errors?.['required']">URL is required</div>
     </div>
+
+    <input ngx-google-places-autocomplete (onAddressChange)="handleAddressChange($event)" />
   </div>
   <button class="btn" [disabled]="form.invalid">Submit</button>
 </form>
+<div *ngIf="address && address.geometry.location">
 
+  <p>Address: {{address.formatted_address}}</p>
+    <p>Latitude: {{ address.geometry.location.lat() }}</p>
+    <p>Longitude: {{ address.geometry.location.lng() }}</p>
+</div>
 <div class="map" #mapElement></div>
